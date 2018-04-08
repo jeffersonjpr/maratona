@@ -8,7 +8,7 @@ int main(){
     if (c >= 7){
         printf("Aprovado");
     }
-    else if(c < 7 and c >= 4){
+    else if(c >= 4){
         printf("Recuperacao");
     }
     else{

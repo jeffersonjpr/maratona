@@ -1,2 +1,2 @@
 # UriSolutions
-URI problems solution.
+URI and CodCad problems solutions.

@@ -2,8 +2,9 @@
 using namespace std;
 
 int main(){
-	int nb,nd,x,y,z;
+	int nb,nd,x,y,z,a = 1;
 	while(true){
+		a = 1;
 		cin >> nb >> nd;
 		if(nb == 0 and nd == 0){
 			break;
@@ -14,12 +15,13 @@ int main(){
 			 cin >> x >> y >> z;
 			 if(b[x] < z){
 				 printf("N\n");
-				 continue;
+				 a = 0;
+				 break;
 			 }
 
 			 b[x] -= z;
 			 b[y] += z;
 		}
-		printf("S\n");
+		if(a)printf("S\n");
 	}
 }

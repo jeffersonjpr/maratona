@@ -3,9 +3,9 @@ using namespace std;
 
 int main(){
 	int camp;
+	bool regra[50];
+	int campf[50] = {0};
 	cin >> camp;
-	bool regra[camp];
-	int campf[camp] = {0};
 	for (int ct = 0;ct < camp;ct++) cin >> regra[ct];
 	if(regra[0]){
 		campf[1] += 1;

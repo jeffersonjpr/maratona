@@ -14,7 +14,7 @@ int main(){
 			for(int ct2=0;ct2 < b;ct2++){
 				if(rule == 0) break;
 				for(int ct3=0;ct3 <b;ct3++){
-					valor = abs(lista[ct2] - lista[ct3])
+					valor = abs(lista[ct2] - lista[ct3]);
 					if(valor == ct5){
 						rule = 0;
 						break;

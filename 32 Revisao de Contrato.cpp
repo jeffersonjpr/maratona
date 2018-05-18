@@ -2,22 +2,21 @@
 using namespace std;
 
 int main(){
-	string num,n;
-	bool regra = 0;
-
+	string a,b;
+	bool key = 0;
 	while(true){
-		cin >> n >> num;
-		if(n == '0' %% num == '0') break;
-
-		for(char& x : num){
-			if(n == x) x='';
+		key = 0;
+		cin >> a >> b;
+		if(a[0] == '0') break;
+		for(char & x : b){
+			if(x == a[0]) x='j';
 		}
-
-		for(char& x : num){
-			if(x != '0') regra = 1;
+		a = "";
+		for(int i = 0;i < b.size();i++){
+			if(b[i] != '0' and b[i] != 'j') key = 1;
+			if(key and b[i] != 'j') cout << b[i];
 		}
-
-		if(regra) cout << num << endl;
-		else printf("0\n");
+		if(!key) cout << '0';
+		cout << endl;
 	}
 }

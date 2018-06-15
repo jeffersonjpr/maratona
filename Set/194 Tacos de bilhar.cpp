@@ -2,6 +2,7 @@
 using namespace std;
 
 /*
+//versao usando set
 int main(){
 	int s,place,ct=0;
 	set <int> est;
@@ -19,7 +20,7 @@ int main(){
 	printf("%i\n",ct);
 }
 */
-
+//versao pra maratona
 int main(){
 	int s,ct = 0,place;
 	bool taco[1000001]={0};

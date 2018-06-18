@@ -1,12 +1,15 @@
 #include <iostream>
-
 using namespace std;
+bool pr[100005];
 
 bool eh_primo(int x){
-	for(int i = 0;i<x;i++){
-		if(x (float)i == 0) return false;
+	for(int i = 2;i<x;i++){
+		if(not pr[i])
+			for(int j = i;j<=x;j+=i){
+				pr[j] = 1;
+			}
 	}
-	return true;
+	return pr[x];
 }
 
 int main(){
@@ -14,7 +17,7 @@ int main(){
 
 	cin>>x;
 
-	if(eh_primo(x)){
+	if(eh_primo(x) == 0){
 		printf("S\n");
 	}else{
 		printf("N\n");

@@ -1,2 +1,0 @@
-# UriSolutions
-URI solutions.

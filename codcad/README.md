@@ -1,2 +1,0 @@
-# codcad
-Codcad problems solutions

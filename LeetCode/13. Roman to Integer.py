@@ -1,4 +1,5 @@
 # dict and for loop
+import unittest
 
 class Solution:
     def romanCharacterMapper(c: str) -> int:
@@ -16,10 +17,38 @@ class Solution:
 
     def romanToInt(self, s: str) -> int:
         result = 0
-        for i in range(len(s) - 1):
-            if Solution.romanCharacterMapper(s[i]) < Solution.romanCharacterMapper(s[i + 1]):
-                result -= Solution.romanCharacterMapper(s[i])
-            else:
-                result += Solution.romanCharacterMapper(s[i])
-        result += Solution.romanCharacterMapper(s[-1])
+        last = 1
+        for c in s[::-1]:
+            current = Solution.romanCharacterMapper(c)
+            result += current if current >= last else -current
+            last = current
         return result
+
+class TestRomanToInt(unittest.TestCase):
+    def test_romanToInt(self):
+        s = "III"
+        sol = Solution()
+        self.assertEqual(sol.romanToInt(s), 3)
+
+    def test_romanToInt2(self):
+        s = "IV"
+        sol = Solution()
+        self.assertEqual(sol.romanToInt(s), 4)
+
+    def test_romanToInt3(self):
+        s = "IX"
+        sol = Solution()
+        self.assertEqual(sol.romanToInt(s), 9)
+
+    def test_romanToInt4(self):
+        s = "LVIII"
+        sol = Solution()
+        self.assertEqual(sol.romanToInt(s), 58)
+
+    def test_romanToInt5(self):
+        s = "MCMXCIV"
+        sol = Solution()
+        self.assertEqual(sol.romanToInt(s), 1994)
+
+if __name__ == '__main__':
+    unittest.main()

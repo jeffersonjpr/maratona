@@ -2,24 +2,13 @@
 import unittest
 
 class Solution:
-    def romanCharacterMapper(c: str) -> int:
-        roman_dict = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000
-        }
-
-        return roman_dict.get(c, 0)
-
     def romanToInt(self, s: str) -> int:
+        roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
         result = 0
         last = 1
         for c in s[::-1]:
-            current = Solution.romanCharacterMapper(c)
+            current = roman_dict[c]
             result += current if current >= last else -current
             last = current
         return result
